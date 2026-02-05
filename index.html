@@ -13,53 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --neon-cyan: #00f3ff;
-            --neon-red: #ff003c;
-        }
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: #05070a;
-            color: #e0e0e0;
-            margin: 0;
-            overflow: hidden;
-        }
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-        }
-        .glass-panel {
-            background: rgba(2, 4, 8, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 243, 255, 0.15);
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 243, 255, 0.05);
-        }
+        :root { --neon-cyan: #00f3ff; --neon-red: #ff003c; }
+        body { font-family: 'Rajdhani', sans-serif; background-color: #05070a; color: #e0e0e0; margin: 0; overflow: hidden; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(0, 243, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 243, 255, 0.03) 1px, transparent 1px); }
+        .glass-panel { background: rgba(2, 4, 8, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(0, 243, 255, 0.15); box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 243, 255, 0.05); }
         .neon-text { text-shadow: 0 0 10px rgba(0, 243, 255, 0.8); }
-        .neon-btn {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .neon-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: conic-gradient(transparent, var(--neon-cyan), transparent 30%);
-            animation: rotate 4s linear infinite;
-            z-index: -1;
-            opacity: 0.3;
-        }
-        @keyframes rotate { 100% { transform: rotate(360deg); } }
-        
-        input { transition: all 0.3s ease; }
-        input:focus { border-color: var(--neon-cyan) !important; box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); }
-
-        /* Custom Scroll */
-        ::-webkit-scrollbar { width: 3px; }
-        ::-webkit-scrollbar-thumb { background: var(--neon-cyan); border-radius: 10px; }
+        @keyframes scan { 0%, 100% { transform: translateY(0); opacity: 0.1; } 50% { transform: translateY(400px); opacity: 0.6; } }
     </style>
 
     <script type="importmap">
@@ -71,11 +30,7 @@
         "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react",
         "firebase/app": "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js",
         "firebase/auth": "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js",
-        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js",
-        "./components/Dashboard": "./components/Dashboard.tsx",
-        "./components/Login": "./components/Login.tsx",
-        "./services/firebaseService": "./services/firebaseService.ts",
-        "./services/mailersendService": "./services/mailersendService.ts"
+        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"
       }
     }
     </script>
